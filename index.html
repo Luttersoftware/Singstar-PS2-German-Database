@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎵 SingStar Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🎵 SingStar Dashboard</h1>
+  <div class="controls">
+    <button id="btn-interpret" class="active" onclick="setModus('interpret')">🎤 Interpret</button>
+    <button id="btn-cd" onclick="setModus('cd')">💿 CD</button>
+    <button id="btn-song" onclick="setModus('song')">🔤 Song</button>
+    <input id="search" placeholder="🔍 Suche nach Song, Interpret oder CD" oninput="render()">
+  </div>
+</header>
+
+<main class="dashboard">
+  <section class="katalog">
+    <div id="liste" class="song-list"></div>
+  </section>
+
+  <aside class="right-panel queue-view">
+    <div class="selection">
+      <h2>Upcoming Next</h2>
+      <div id="auswahlListe"></div>
+    </div>
+
+    <div class="spotify-widget">
+      <h2>Spotify Player</h2>
+      <div id="spotifyPlayer">Wähle einen Song</div>
+    </div>
+  </aside>
+</main>
+
+<script src="script.js"></script>
+
+<nav class="bottom-nav">
+  <button data-view="katalog" onclick="showView('katalog')" class="active">🎵<span>Katalog</span></button>
+  <button data-view="queue" onclick="showView('queue')">📂<span>Queue</span></button>
+  <button data-view="player" onclick="showView('player')">▶️<span>Player</span></button>
+</nav>
+</body>
+
+</html>
